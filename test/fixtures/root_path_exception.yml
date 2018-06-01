@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:5279/
+    body:
+      encoding: UTF-8
+      string: '{"method":"get","params":{}}'
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 01 Jun 2018 23:27:43 GMT
+      Content-Length:
+      - '157'
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json-rpc
+      Server:
+      - TwistedWeb/16.6.0
+      Set-Cookie:
+      - TWISTED_SESSION=c9f7585a7c9c19bc46b10406dc392f2a8c96421568a3dce5d04a989035435f82;
+        Path=/
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "error": {
+            "code": -32602,
+            "data": [],
+            "message": "Missing required parameters for get command: uri"
+          },
+          "id": null,
+          "jsonrpc": "2.0"
+        }
+    http_version: 
+  recorded_at: Fri, 01 Jun 2018 23:27:43 GMT
+recorded_with: VCR 4.0.0

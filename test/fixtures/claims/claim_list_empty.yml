@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:5279/
+    body:
+      encoding: UTF-8
+      string: '{"method":"claim_list","params":{"name":"ruby"}}'
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 01 Jun 2018 23:23:55 GMT
+      Content-Length:
+      - '139'
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json-rpc
+      Server:
+      - TwistedWeb/16.6.0
+      Set-Cookie:
+      - TWISTED_SESSION=8748b78b082005a00196e409766da8df0ba261d5969afdca6b19dbd8545d35b9;
+        Path=/
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "id": null,
+          "jsonrpc": "2.0",
+          "result": {
+            "claims": [],
+            "last_takeover_height": 0,
+            "supports_without_claims": []
+          }
+        }
+    http_version: 
+  recorded_at: Fri, 01 Jun 2018 23:23:55 GMT
+recorded_with: VCR 4.0.0

@@ -1,0 +1,82 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:5279/
+    body:
+      encoding: UTF-8
+      string: '{"method":"claim_show","params":{"claim_id":"2c63bcc26eb26d60e91fe99cd972e38bb64b3401"}}'
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 01 Jun 2018 23:26:38 GMT
+      Content-Length:
+      - '1865'
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json-rpc
+      Server:
+      - TwistedWeb/16.6.0
+      Set-Cookie:
+      - TWISTED_SESSION=278e106f2e369b35d9d0d51a28ad6a7330b7823760c97d6b7c9eb3fe95bcab95;
+        Path=/
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "id": null,
+          "jsonrpc": "2.0",
+          "result": {
+            "address": "bTzDhXE4vK6fLqU9LSVgrBGYhxuSj8spH8",
+            "amount": 1.0,
+            "claim_id": "2c63bcc26eb26d60e91fe99cd972e38bb64b3401",
+            "claim_sequence": 15,
+            "decoded_claim": true,
+            "depth": 232549,
+            "effective_amount": 1.0,
+            "has_signature": false,
+            "height": 147432,
+            "hex": "080110011adc010801129401080410011a0d57686174206973204c4252593f223057686174206973204c4252593f20416e20696e74726f64756374696f6e207769746820416c6578205461626172726f6b2a0c53616d75656c20427279616e32084c42525920696e6338004a2f68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f66696c65732e6c6272792e696f2f6c6f676f2e706e6752005a001a41080110011a30e3bcfb59a97efd76d5ce7533ff9aae8ad565df4b8d10db32b7296b07d2a3fbd41ba99c439cc972b567323fc97132041d2209766964656f2f6d7034",
+            "name": "lbry",
+            "nout": 0,
+            "permanent_url": "lbry#2c63bcc26eb26d60e91fe99cd972e38bb64b3401",
+            "supports": [],
+            "txid": "32b2c71eb1edb47dfa1b9b645c35fa5a4fdc77b4d4eada08d747e21f3f0871a7",
+            "valid_at_height": 150075,
+            "value": {
+              "claimType": "streamType",
+              "stream": {
+                "metadata": {
+                  "author": "Samuel Bryan",
+                  "description": "What is LBRY? An introduction with Alex Tabarrok",
+                  "language": "en",
+                  "license": "LBRY inc",
+                  "licenseUrl": "",
+                  "nsfw": false,
+                  "preview": "",
+                  "thumbnail": "https://s3.amazonaws.com/files.lbry.io/logo.png",
+                  "title": "What is LBRY?",
+                  "version": "_0_1_0"
+                },
+                "source": {
+                  "contentType": "video/mp4",
+                  "source": "e3bcfb59a97efd76d5ce7533ff9aae8ad565df4b8d10db32b7296b07d2a3fbd41ba99c439cc972b567323fc97132041d",
+                  "sourceType": "lbry_sd_hash",
+                  "version": "_0_0_1"
+                },
+                "version": "_0_0_1"
+              },
+              "version": "_0_0_1"
+            }
+          }
+        }
+    http_version: 
+  recorded_at: Fri, 01 Jun 2018 23:26:38 GMT
+recorded_with: VCR 4.0.0
