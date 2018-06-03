@@ -25,7 +25,9 @@ Or install it yourself as:
 All methods listed on [Lbry API doc](https://lbryio.github.io/lbry) are working here and they have the same name and accept the same arguments, for example to call the method get example from the api doc: `curl 'http://localhost:5279' --data '{"method":"get","params":{"uri":"what"} }'`, here you will need to do this
 ```
 client = Lbry::Client.new
-client.get(uri: "what")
+client.get(uri: "what") =>
+ => #<OpenStruct id=nil, jsonrpc="2.0", result=#<OpenStruct blobs_completed=76, blobs_in_stream=76, channel_claim_id=nil, channel_name=nil, claim_id="6769855a9aa43b67086f9ff3c1a5bacb5698a27a", claim_name="what", completed=true, download_directory="/home/r1/Downloads", download_path="/home/r1/Downloads/LBRY100.mp4", file_name="LBRY100.mp4", key="0edc1705489d7a2b2bcad3fea7e5ce92", metadata=#<OpenStruct author="Samuel Bryan", description="What is LBRY? An introduction with Alex Tabarrok", language="en", license="LBRY inc", licenseUrl="", nsfw=false, preview="", thumbnail="https://s3.amazonaws.com/files.lbry.io/logo.png", title="What is LBRY?", version="_0_1_0">, mime_type="video/mp4", nout=0, outpoint="6c71c02c4990ce0590f6888a77ad11f1ae45486f6a4c56d5013954ee8f6356bc:0", points_paid=0.0, sd_hash="d5169241150022f996fa7cd6a9a1c421937276a3275eb912790bd07ba7aec1fac5fd45431d226b8fb402691e79aeb24b", status="completed", stopped=true, stream_hash="9f41e37b1ea706d1b431a65f634b89c5aadefb106280da3661e4d565d47bc938a345755cafb2af807bcfc9fbde3306e3", stream_name="LBRY100.mp4", suggested_file_name="LBRY100.mp4", total_bytes=158433904, txid="6c71c02c4990ce0590f6888a77ad11f1ae45486f6a4c56d5013954ee8f6356bc", written_bytes=158433824>> 
+
 ```
 
 Example on how to get a list of claims:
