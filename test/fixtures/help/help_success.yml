@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:5279/
+    body:
+      encoding: UTF-8
+      string: '{"method":"help","params":[]}'
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Jun 2018 00:56:49 GMT
+      Content-Length:
+      - '369'
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json-rpc
+      Server:
+      - TwistedWeb/16.6.0
+      Set-Cookie:
+      - TWISTED_SESSION=4c1f97a2d54e129c50af919cf18969df7110dae003e0b4121d26cf666bf04e55;
+        Path=/
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "id": null,
+          "jsonrpc": "2.0",
+          "result": {
+            "about": "This is the LBRY JSON-RPC API",
+            "command_help": "Pass a `command` parameter to this method to see help for that command (e.g. `help command=resolve_name`)",
+            "command_list": "Get a full list of commands using the `commands` method",
+            "more_info": "Visit https://lbry.io/api for more info"
+          }
+        }
+    http_version: 
+  recorded_at: Sun, 03 Jun 2018 00:56:49 GMT
+recorded_with: VCR 4.0.0

@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:5279/
+    body:
+      encoding: UTF-8
+      string: '{"method":"get","params":{"uri":"what"}}'
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 03 Jun 2018 01:22:29 GMT
+      Content-Length:
+      - '1487'
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json-rpc
+      Server:
+      - TwistedWeb/16.6.0
+      Set-Cookie:
+      - TWISTED_SESSION=ab214a3eb6ec7e8c5b9f828a7aceae266e366ff50915ec83445ab10e656ee8c5;
+        Path=/
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "id": null,
+          "jsonrpc": "2.0",
+          "result": {
+            "blobs_completed": 24,
+            "blobs_in_stream": 76,
+            "channel_claim_id": null,
+            "channel_name": null,
+            "claim_id": "6769855a9aa43b67086f9ff3c1a5bacb5698a27a",
+            "claim_name": "what",
+            "completed": false,
+            "download_directory": "/home/r1/Downloads",
+            "download_path": "/home/r1/Downloads/LBRY100.mp4",
+            "file_name": "LBRY100.mp4",
+            "key": "0edc1705489d7a2b2bcad3fea7e5ce92",
+            "metadata": {
+              "author": "Samuel Bryan",
+              "description": "What is LBRY? An introduction with Alex Tabarrok",
+              "language": "en",
+              "license": "LBRY inc",
+              "licenseUrl": "",
+              "nsfw": false,
+              "preview": "",
+              "thumbnail": "https://s3.amazonaws.com/files.lbry.io/logo.png",
+              "title": "What is LBRY?",
+              "version": "_0_1_0"
+            },
+            "mime_type": "video/mp4",
+            "nout": 0,
+            "outpoint": "6c71c02c4990ce0590f6888a77ad11f1ae45486f6a4c56d5013954ee8f6356bc:0",
+            "points_paid": 0.0,
+            "sd_hash": "d5169241150022f996fa7cd6a9a1c421937276a3275eb912790bd07ba7aec1fac5fd45431d226b8fb402691e79aeb24b",
+            "status": "running",
+            "stopped": false,
+            "stream_hash": "9f41e37b1ea706d1b431a65f634b89c5aadefb106280da3661e4d565d47bc938a345755cafb2af807bcfc9fbde3306e3",
+            "stream_name": "LBRY100.mp4",
+            "suggested_file_name": "LBRY100.mp4",
+            "total_bytes": 158433904,
+            "txid": "6c71c02c4990ce0590f6888a77ad11f1ae45486f6a4c56d5013954ee8f6356bc",
+            "written_bytes": 50327552
+          }
+        }
+    http_version: 
+  recorded_at: Sun, 03 Jun 2018 01:22:29 GMT
+recorded_with: VCR 4.0.0

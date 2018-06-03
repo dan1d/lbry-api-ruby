@@ -33,4 +33,35 @@ class ApiTest < Minitest::Test
       end
     end
   end
+
+  def test_it_shows_help
+    VCR.use_cassette('help/help_success') do
+      response = client.help
+      refute_empty response.result.command_help
+    end
+  end
+
+  def test_it_shows_help
+    VCR.use_cassette('help/help_with_command_success') do
+      response = client.help(command: "resolve")
+      refute_empty response.result.help
+    end
+  end
+
+  def test_it_resolve_uri
+    VCR.use_cassette('resolve/uri_success') do
+      response = client.resolve(uri: "what")
+      metadata = response.result.what.claim.value.stream.metadata
+      assert_equal metadata.author, "Samuel Bryan"
+      assert_equal metadata.title, "What is LBRY?"
+    end
+  end
+
+  def test_it_download_file
+    VCR.use_cassette('get/download_file_success') do
+      response = client.get(uri: "what")
+      refute_empty response.result.claim_id
+    end
+  end
+
 end

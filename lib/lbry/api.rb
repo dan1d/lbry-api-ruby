@@ -24,24 +24,24 @@ module Lbry
       default_options[:basic_auth] = auth if auth.values.any?
     end
 
-    def request(http_method, lbry_method, lbry_params, headers: {})
-      params = { body: { method: lbry_method, params: lbry_params }.to_json }
-      params.merge!({headers: headers}) if headers.keys.any?
-      response = self.class.send(http_method, '', params)
+    def request(http_verb, lbry_command, lbry_params, headers: {})
+      params = { body: { method: lbry_command, params: lbry_params }.to_json }
+      params[:headers] = headers if headers.keys.any?
+      response = self.class.send(http_verb, '', params)
       parse_response(response)
     end
 
-    def get(lbry_method, lbry_params = {})
-      request(:get, lbry_method, lbry_params)
+    def get(lbry_command, lbry_params = {}, options: {})
+      request(:get, lbry_command, lbry_params)
     end
 
-    def post(lbry_method, lbry_params = {})
+    def post(lbry_command, *lbry_params)
       headers = { "Content-Type" => "application/x-www-form-urlencoded" }
-      request(:post, lbry_method, lbry_params, headers: headers)
+      request(:post, lbry_command, *lbry_params, headers: headers)
     end
 
-    def put(lbry_method, lbry_params = {})
-      request(:put, lbry_method, lbry_params)
+    def put(lbry_command, lbry_params = {}, options: {})
+      request(:put, lbry_command, lbry_params)
     end
     
   end
