@@ -2,14 +2,18 @@
 module Lbry
   class Client
     attr_reader :client
+    APIS = {
+      daemon: Lbry::Daemon,
+      crd: Lbry::Lbrycrd
+    }
     def self.add_support_for(lbry_command, http_verb: :post)
       define_method(lbry_command) do |*args, &block|
         client.send(http_verb, lbry_command, *args)
       end
     end
 
-    def initialize(auth: {})
-      @client = Api.new(auth)
+    def initialize(auth: {}, api: :daemon)
+      @client = APIS[api].new(auth)
     end
 
     # Announce blobs to the DHT
